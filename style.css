@@ -1,0 +1,43 @@
+:root { color-scheme: dark; font-family: "Segoe UI", Arial, sans-serif; color: #d9f7ef; background: #061c2a; }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; word-break: keep-all; overflow-wrap: break-word; }
+body { background: #061c2a; }
+body.transparent, html:has(body.transparent) { background: transparent; }
+canvas { display: block; width: 100%; height: 100%; object-fit: contain; }
+.identity { position: fixed; left: 3.3%; top: 4.5%; pointer-events: none; }
+.wordmark { display: flex; align-items: center; gap: 12px; font-size: 17px; font-weight: 650; letter-spacing: 3px; }
+.reef-mark { color: #9ff3ce; font-size: 35px; line-height: 1; }
+.edition { border-left: 1px solid #a2e3d533; margin-left: 8px; padding-left: 20px; font-size: 9px; color: #a2c9c7; letter-spacing: 2px; font-weight: 400; }
+.connection { display: flex; align-items: center; gap: 8px; margin: 12px 0 0 47px; color: #8cbbb9; font-size: 11px; letter-spacing: .5px; }
+#status-dot { width: 5px; height: 5px; border-radius: 50%; background: #e7ba81; box-shadow: 0 0 10px #e7ba8144; }
+body.connected #status-dot { background: #96efc0; box-shadow: 0 0 10px #96efc077; }
+.hud { position: fixed; left: 3.5%; bottom: 5%; display: flex; gap: 34px; align-items: flex-start; pointer-events: none; padding: 17px 22px; border: 1px solid #a7e9d71c; border-radius: 12px; background: #05202d80; backdrop-filter: blur(12px); }
+.metric-label { display: block; font-size: 9px; letter-spacing: 1.7px; color: #93b7b6; margin-bottom: 9px; }
+.hud strong { font-size: 20px; font-weight: 400; font-variant-numeric: tabular-nums; }
+.pulse-row { display: flex; gap: 12px; align-items: center; height: 24px; }
+.pulse-track { display: block; width: 70px; height: 4px; border-radius: 8px; background: #b3e6da20; overflow: hidden; }
+#pulse-fill { display: block; height: 100%; width: 0; background: #a0eccb; border-radius: 8px; transition: width 1s; }
+#pulse-value { font-size: 16px; }
+#pulse-value span { font-size: 10px; color: #88afae; }
+#event-note { position: fixed; top: 5%; right: 3.5%; max-width: 36%; color: #f6dfad; font-size: 14px; letter-spacing: .5px; opacity: 0; transition: opacity 1s; pointer-events: none; }
+#event-note.visible { opacity: 1; }
+#sleep-prompt { position: fixed; top: 64%; width: 100%; text-align: center; font-size: 14px; letter-spacing: 2px; color: #bfd9c8; opacity: 0; transition: opacity 3s; pointer-events: none; }
+body.sleeping #sleep-prompt { opacity: .8; }
+#setup { position: fixed; left: 14%; top: 26%; max-width: 570px; padding: 28px; border-radius: 18px; background: #061e2c88; backdrop-filter: blur(6px); }
+[hidden] { display: none !important; }
+.eyebrow { font-size: 10px; color: #a0e5cd; letter-spacing: 3px; }
+h1 { font-size: clamp(40px, 5.5vw, 80px); line-height: 1.04; font-weight: 450; letter-spacing: -3px; margin: 22px 0; }
+p { color: #a7c4c3; line-height: 1.8; font-size: 15px; }
+form { margin: 28px 0 22px; }
+label { display: block; font-size: 11px; margin-bottom: 9px; color: #b6d9cf; }
+.input-row { display: flex; gap: 8px; }
+input, button { font: inherit; border-radius: 6px; padding: 12px; border: 1px solid #94c7b640; }
+input { background: #031b28; color: #e6fff3; width: 190px; min-width: 0; }
+button { background: #b4efd3; color: #0a3032; cursor: pointer; font-size: 12px; }
+button:hover { background: #d9ffe9; }
+input:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid #d6f5b4; outline-offset: 4px; }
+.demo-link { color: #a8d3c9; font-size: 12px; text-underline-offset: 5px; }
+#demo-caption { position: fixed; bottom: 6%; right: 3.5%; color: #92b6b5; font-size: 11px; letter-spacing: .4px; pointer-events: none; }
+.demo-badge { display: block; font-size: 9px; letter-spacing: 2px; color: #b7decc; margin-bottom: 8px; }
+noscript { position: fixed; top: 40%; left: 20%; }
+@media (max-width: 650px) { .edition { display: none; } .hud { gap: 18px; padding: 12px; bottom: 3%; } .metric-label { font-size: 7px; letter-spacing: 1px; } .hud strong { font-size: 16px; } .pulse-track { width: 35px; } #demo-caption { display: none; } #setup { left: 4%; right: 4%; top: 20%; } #event-note { top: 15%; max-width: 70%; } .input-row { flex-wrap: wrap; } }

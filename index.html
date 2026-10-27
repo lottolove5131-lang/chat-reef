@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#061c2a">
+  <title>Chat Reef — a living ocean, made by chat</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23061c2a'/%3E%3Cpath d='M16 27V6m0 11L7 8m9 14L26 12M7 8v8m19-4v8' fill='none' stroke='%23a7dfc5' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="twitch.js" defer></script>
+  <script src="demo.js" defer></script>
+  <script src="reef.js" defer></script>
+</head>
+<body>
+  <canvas id="reef" width="1920" height="1080" aria-label="An animated coral reef populated by chatters"></canvas>
+  <header class="identity">
+    <div class="wordmark"><span class="reef-mark" aria-hidden="true">✳</span> CHAT REEF <span class="edition">LIVE ECOSYSTEM</span></div>
+    <div class="connection"><span id="status-dot"></span><span id="connection-status" role="status">Finding the current…</span></div>
+  </header>
+  <aside class="hud" aria-label="Reef statistics">
+    <div><span class="metric-label">REEF AGE</span><strong id="reef-age">0m</strong></div>
+    <div><span class="metric-label">CREATURES ALIVE</span><strong id="creature-count">0</strong></div>
+    <div class="pulse"><span class="metric-label">CHAT PULSE</span><div class="pulse-row"><span class="pulse-track"><span id="pulse-fill"></span></span><strong id="pulse-value">0<span> / min</span></strong></div></div>
+  </aside>
+  <div id="event-note" role="status" aria-live="polite"></div>
+  <div id="sleep-prompt">say hi to wake the reef</div>
+  <section id="setup" hidden>
+    <span class="eyebrow">A LITTLE OCEAN OF YOUR OWN</span>
+    <h1>Your chat.<br>A living reef.</h1>
+    <p>Every voice becomes a creature.<br>Every message brings the ocean to life.</p>
+    <form id="channel-form"><label for="channel">Twitch channel</label><div class="input-row"><input id="channel" name="channel" placeholder="channel name" pattern="[A-Za-z0-9_]{1,25}" maxlength="25" required autocomplete="off"><button type="submit">Enter the reef <span aria-hidden="true">↗</span></button></div></form>
+    <a class="demo-link" href="?demo=1">Explore the offline demo <span aria-hidden="true">→</span></a>
+  </section>
+  <footer id="demo-caption" hidden><span class="demo-badge">DEMO OCEAN</span> Simulated chat. Real little ecosystem.</footer>
+  <noscript>Chat Reef needs JavaScript to animate and connect to chat.</noscript>
+</body>
+</html>
